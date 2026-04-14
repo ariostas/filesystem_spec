@@ -47,6 +47,7 @@ jobs:
       - name: Run Tests
         shell: bash -l {0}
         run: |
+          python -c "import sys; print(sys._is_gil_enabled())"
           pip install -e .[test_full]
           pytest -v
 
